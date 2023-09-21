@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from "react";
 import "./Countries.css";
 import Layout from "../../Layout/Layout";
-import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import countriesSlice, { getAllCountries } from "../../store/countriesSlice";
+import CountriesCard from "../../components/CountriesCard/CountriesCard";
 
 const Countries = () => {
-  const [countries, setCountries] = useState([]);
-  const getCountries = async () => {
-    const response = await axios.get(
-      `https://apiv3.apifootball.com/?action=get_countries&APIkey=${process.env.REACT_APP_API_KEY}`
-    );
-    const data = await response.data;
-
-    setCountries(data);
-    console.log(data);
-    return data;
-  };
-
+  const dispatch = useDispatch();
+  const countries = useSelector((state) => state.countries.countries);
   useEffect(() => {
-    getCountries();
+    dispatch(getAllCountries());
+    console.log(countries);
   }, []);
 
-  return <Layout>Countries</Layout>;
+  return (
+    <Layout>
+      <div className="countries-main">
+        {countries.map((item, index) => (
+          <CountriesCard key={index} {...item} />
+        ))}
+      </div>
+    </Layout>
+  );
 };
 
 export default Countries;

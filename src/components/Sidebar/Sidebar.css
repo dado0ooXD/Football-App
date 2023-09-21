@@ -12,7 +12,7 @@
   justify-content: space-around;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1026px) {
   .sidebar-body {
     flex-direction: row;
     width: 100%;

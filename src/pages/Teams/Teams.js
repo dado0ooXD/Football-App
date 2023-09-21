@@ -27,7 +27,7 @@ const Teams = () => {
       <button
         onClick={() => {
           fetch(
-            "https://apiv3.apifootball.com/?action=get_countries&APIkey=0db195f627a844713476ffb1e62ae3a4ef28c79007c2aeb9237b740b010c111f"
+            `https://apiv3.apifootball.com/?action=get_countries&APIkey=${process.env.REACT_APP_API_KEY}`
           )
             .then((res) => res.json())
             .then((data) => {

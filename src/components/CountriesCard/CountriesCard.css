@@ -1,0 +1,15 @@
+.countries-card {
+  padding: 10px;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.country-logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  margin-top: 30px;
+}

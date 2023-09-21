@@ -15,7 +15,7 @@
   margin-left: 20px;
 }
 
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1026px) {
   .league-name {
     display: none;
   }
