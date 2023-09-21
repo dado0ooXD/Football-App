@@ -1,0 +1,26 @@
+.league-button {
+  border: 1px solid gray;
+  padding: 0 25px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.league-logo {
+  height: 20px;
+  width: 20px;
+}
+
+.league-name {
+  margin-left: 20px;
+}
+
+@media screen and (max-width: 992px) {
+  .league-name {
+    display: none;
+  }
+
+  .league-button {
+    border: none;
+  }
+}

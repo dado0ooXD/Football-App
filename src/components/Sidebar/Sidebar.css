@@ -1,0 +1,31 @@
+.sidebar-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar-body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+@media screen and (max-width: 992px) {
+  .sidebar-body {
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+  h1 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 629px) {
+  .sidebar-container {
+    overflow-x: scroll;
+  }
+}
