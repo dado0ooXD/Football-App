@@ -8,6 +8,7 @@ import CountriesCard from "../../components/CountriesCard/CountriesCard";
 const Countries = () => {
   const dispatch = useDispatch();
   const countries = useSelector((state) => state.countries.countries);
+  const loading = useSelector((state) => state.countries.loading);
   useEffect(() => {
     dispatch(getAllCountries());
     console.log(countries);
@@ -15,11 +16,25 @@ const Countries = () => {
 
   return (
     <Layout>
-      <div className="countries-main">
-        {countries.map((item, index) => (
-          <CountriesCard key={index} {...item} />
-        ))}
-      </div>
+      {loading ? (
+        <div
+          style={{
+            height: "100vh",
+            width: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <h1 style={{ color: "black" }}>Loading...</h1>
+        </div>
+      ) : (
+        <div className="countries-main">
+          {countries.map((item, index) => (
+            <CountriesCard key={index} {...item} />
+          ))}
+        </div>
+      )}
     </Layout>
   );
 };

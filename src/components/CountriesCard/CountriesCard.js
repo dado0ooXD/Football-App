@@ -1,9 +1,14 @@
 import React from "react";
 import "./CountriesCard.css";
+import { useNavigate } from "react-router-dom";
 
-const CountriesCard = ({ country_logo, country_name }) => {
+const CountriesCard = ({ country_logo, country_name, country_id }) => {
+  const navigate = useNavigate();
   return (
-    <div className="countries-card">
+    <div
+      className="countries-card"
+      onClick={() => navigate(`/competitions/${country_id}`)}
+    >
       <img src={country_logo} alt="country_logo" className="country-logo" />
       <h5>{country_name}</h5>
     </div>

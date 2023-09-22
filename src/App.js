@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Teams from "./pages/Teams/Teams";
 import Home from "./pages/Home/Home";
 import Countries from "./pages/Countries/Countries";
+import Competitions from "./pages/Competitions/Competitions";
 
 function App() {
   //   const leagues = [
@@ -70,6 +71,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/countries" element={<Countries />} />
+        <Route path="/competitions/:id" element={<Competitions />} />
       </Routes>
     </BrowserRouter>
   );
