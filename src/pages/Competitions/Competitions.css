@@ -1,0 +1,40 @@
+.competitions-main {
+  border: 1px solid black;
+  width: 100%;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 1fr;
+  height: 100vh;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+@media screen and (min-width: 1440px) {
+  .competitions-main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .competitions-main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 1123px) {
+  .competitions-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .competitions-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .competitions-main {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}

@@ -18,7 +18,6 @@ export const getAllCountries = createAsyncThunk(
 );
 
 // Competitions
-
 export const getCompetitions = createAsyncThunk(
   "countries/getCompetitions",
   async (id) => {
