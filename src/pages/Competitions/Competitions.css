@@ -1,40 +1,25 @@
 .competitions-main {
-  border: 1px solid black;
+  /* border: 1px solid black; */
   width: 100%;
   display: grid;
   grid-gap: 20px;
-  grid-template-columns: 1fr;
-  height: 100vh;
-  padding: 20px;
-  overflow-y: scroll;
+  margin-left: 20px;
 }
 
-@media screen and (min-width: 1440px) {
+@media (min-width: 692px) {
   .competitions-main {
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media (min-width: 937px) {
   .competitions-main {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media screen and (max-width: 1123px) {
+@media (min-width: 1470px) {
   .competitions-main {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 975px) {
-  .competitions-main {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media screen and (max-width: 750px) {
-  .competitions-main {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }

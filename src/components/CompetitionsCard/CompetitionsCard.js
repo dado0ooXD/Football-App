@@ -12,7 +12,7 @@ const CompetitionsCard = ({
     <div className="competitions-card">
       <div className="competitions-card-header">
         <img src={league_logo} alt="league_logo" className="league-logo-card" />
-        <h2>{league_name}</h2>
+        <h2 className="league-name-competitions">{league_name}</h2>
       </div>
       <div className="competitions-card-body">
         <img
@@ -20,7 +20,7 @@ const CompetitionsCard = ({
           alt="country_logo"
           className="country-logo-card"
         />
-        <h5>{country_name}</h5>
+        <h5 className="country-name-competitions">{country_name}</h5>
       </div>
     </div>
   );

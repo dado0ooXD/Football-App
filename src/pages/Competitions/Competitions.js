@@ -15,10 +15,12 @@ const Competitions = () => {
   }, [id]);
   return (
     <Layout>
-      <div className="competitions-main">
-        {competitions.map((item, index) => (
-          <CompetitionsCard key={index} {...item} />
-        ))}
+      <div style={{ width: "100%" }}>
+        <div className="competitions-main">
+          {competitions.map((item, index) => (
+            <CompetitionsCard key={index} {...item} />
+          ))}
+        </div>
       </div>
     </Layout>
   );

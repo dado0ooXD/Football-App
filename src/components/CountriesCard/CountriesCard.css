@@ -14,3 +14,9 @@
   border-radius: 50%;
   margin-top: 30px;
 }
+
+/* @media screen and (max-width: 540px) {
+  .countries-card {
+    height: 150px;
+  }
+} */
