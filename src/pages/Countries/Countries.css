@@ -2,21 +2,34 @@
   display: grid;
   grid-gap: 20px;
   padding: 20px;
+  background-color: #111;
 }
 
 .search-container {
   padding-left: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
+  background-color: #111;
+  border-radius: 20px;
 }
 
 .search-container input {
   height: 50px;
   width: 300px;
   border-radius: 15px;
-  border: 1px solid gray;
+  border: none;
+  outline: #111;
+  color: #fff;
   font-size: 25px;
   padding-left: 20px;
+  background-color: #181818;
+  font-family: "Jost", sans-serif;
+}
+
+::placeholder {
+  color: white;
+  font-family: "Jost", sans-serif;
+  font-size: 23px;
 }
 
 @media (min-width: 692px) {

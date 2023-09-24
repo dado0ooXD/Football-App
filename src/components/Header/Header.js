@@ -8,9 +8,9 @@ const Header = () => {
       <div className="nav-wrapper">
         <div className="logo-container">
           <img
-            className="logo"
-            src="https://i.imgur.com/gea725J.png"
-            alt="Logo"
+            src="https://res.cloudinary.com/skillsmatter/image/upload/c_crop,g_custom/v1567091866/mhxmtdmg97hvpsh9fewi.png"
+            alt="app-logo"
+            className="app-logo"
           />
         </div>
         <nav>
@@ -24,14 +24,14 @@ const Header = () => {
             <ul className="nav-tabs">
               <li className="nav-tab">
                 {" "}
-                <Link to="/" style={{ textDecoration: "none", color: "black" }}>
+                <Link to="/" style={{ textDecoration: "none", color: "white" }}>
                   Home
                 </Link>
               </li>
               <li className="nav-tab">
                 <Link
                   to="/teams"
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{ textDecoration: "none", color: "white" }}
                 >
                   Teams
                 </Link>
@@ -39,12 +39,20 @@ const Header = () => {
               <li className="nav-tab">
                 <Link
                   to="/countries"
-                  style={{ textDecoration: "none", color: "black" }}
+                  style={{ textDecoration: "none", color: "white" }}
                 >
                   Countries
                 </Link>
               </li>
-              <li className="nav-tab">FAQ</li>
+              <li className="nav-tab">
+                {" "}
+                <Link
+                  to="/countries"
+                  style={{ textDecoration: "none", color: "white" }}
+                >
+                  Nzm
+                </Link>
+              </li>
             </ul>
           </div>
         </nav>

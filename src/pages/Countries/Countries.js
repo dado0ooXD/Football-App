@@ -31,7 +31,14 @@ const Countries = () => {
           <h1 style={{ color: "black" }}>Loading...</h1>
         </div>
       ) : (
-        <div style={{ width: "100%", border: "1px solid black" }}>
+        <div
+          style={{
+            width: "100%",
+            height: "100vh",
+            overflowY: "scroll",
+            borderRadius: "20px",
+          }}
+        >
           <div className="search-container">
             <input
               placeholder="Search"

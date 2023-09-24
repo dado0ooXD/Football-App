@@ -15,7 +15,13 @@ const Competitions = () => {
   }, [id]);
   return (
     <Layout>
-      <div style={{ width: "100%" }}>
+      <div
+        style={{
+          width: "100%",
+          height: "100vh",
+          overflowY: "scroll",
+        }}
+      >
         <div className="competitions-main">
           {competitions.map((item, index) => (
             <CompetitionsCard key={index} {...item} />

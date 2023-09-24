@@ -10,7 +10,7 @@ const CountriesCard = ({ country_logo, country_name, country_id }) => {
       onClick={() => navigate(`/competitions/${country_id}`)}
     >
       <img src={country_logo} alt="country_logo" className="country-logo" />
-      <h5>{country_name}</h5>
+      <h5 style={{ color: "white" }}>{country_name}</h5>
     </div>
   );
 };

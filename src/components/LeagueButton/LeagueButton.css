@@ -1,9 +1,10 @@
 .league-button {
-  border: 1px solid gray;
+  /* background-color: #181818; */
   padding: 0 25px;
   border-radius: 15px;
   display: flex;
   align-items: center;
+  color: white;
 }
 
 .league-logo {
@@ -22,5 +23,11 @@
 
   .league-button {
     border: none;
+  }
+}
+
+@media (min-width: 1026px) {
+  .league-button {
+    background-color: #181818;
   }
 }

@@ -5,6 +5,13 @@
   align-items: center;
 }
 
+.sidebar-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
 .sidebar-body {
   height: 100%;
   display: flex;

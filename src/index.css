@@ -22,6 +22,7 @@ code {
   min-height: calc(100vh - 100px);
   display: flex;
   padding: 70px;
+  background-color: #181818;
 }
 
 /* .header {
@@ -32,9 +33,9 @@ code {
 
 .sidebar {
   min-width: 300px;
-  background-color: lightgray;
+  background-color: #111;
   display: flex;
-  border-radius: 30px;
+  border-radius: 20px;
   height: 100vh;
   /* margin-top: 20px; */
 }
@@ -42,6 +43,9 @@ code {
 .content {
   display: flex;
   flex-grow: 1;
+  background-color: #111;
+  border-radius: 20px;
+  /* margin-left: 20px; */
 }
 
 @media screen and (max-width: 1026px) {
@@ -57,5 +61,11 @@ code {
 
   .content {
     margin-top: 20px;
+  }
+}
+
+@media (min-width: 1026px) {
+  .content {
+    margin-left: 20px;
   }
 }
