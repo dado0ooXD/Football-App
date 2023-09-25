@@ -1,0 +1,54 @@
+import React from "react";
+import "./ResultCard.css";
+
+const ResultCard = ({
+  league_logo,
+  league_name,
+  league_year,
+  match_awayteam_name,
+  match_awayteam_score,
+  match_date,
+  match_hometeam_name,
+  match_hometeam_score,
+  match_time,
+  team_away_badge,
+  team_home_badge,
+}) => {
+  return (
+    <div className="result-card-main">
+      <div className="result-card-second">
+        <div className="result-card-head">
+          <p className="result-date-time">
+            {match_time}
+            <br />
+            {match_date}
+          </p>
+        </div>
+        <div className="result-card-body">
+          <div className="team-badges">
+            <img
+              src={team_home_badge}
+              className="team-badge"
+              alt="home_badge"
+            />
+            <img
+              src={team_away_badge}
+              className="team-badge"
+              alt="away_badge"
+            />
+          </div>
+          <div>
+            <p className="match-name">{match_hometeam_name}</p>
+            <p className="match-name">{match_awayteam_name}</p>
+          </div>
+        </div>
+      </div>
+      <div className="result-card-foot">
+        <h4 className="match-score">{match_hometeam_score}</h4>
+        <h4 className="match-score">{match_awayteam_score}</h4>
+      </div>
+    </div>
+  );
+};
+
+export default ResultCard;

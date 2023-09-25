@@ -4,6 +4,7 @@ import Teams from "./pages/Teams/Teams";
 import Home from "./pages/Home/Home";
 import Countries from "./pages/Countries/Countries";
 import Competitions from "./pages/Competitions/Competitions";
+import Results from "./pages/Results/Results";
 
 function App() {
   //   const leagues = [
@@ -69,6 +70,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/results/:id" element={<Results />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/countries" element={<Countries />} />
         <Route path="/competitions/:id" element={<Competitions />} />

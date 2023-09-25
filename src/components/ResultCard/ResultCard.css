@@ -1,0 +1,56 @@
+.result-card-main {
+  background-color: #181818;
+  height: 60px;
+  /* margin-bottom: 10px; */
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.result-card-second {
+  display: flex;
+  margin-left: 10px;
+}
+
+.result-date-time {
+  color: gray;
+  font-size: 13px;
+}
+
+.result-card-head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-card-body {
+  margin-left: 20px;
+  display: flex;
+}
+
+.result-card-foot {
+  margin-right: 40px;
+}
+
+.match-name {
+  color: white;
+  margin-left: 10px;
+}
+
+.team-badges {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.team-badge {
+  height: 25px;
+  width: 25px;
+}
+
+.match-score {
+  color: white;
+}
