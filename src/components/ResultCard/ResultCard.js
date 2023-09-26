@@ -1,10 +1,12 @@
 import React from "react";
 import "./ResultCard.css";
+import { useNavigate, useParams } from "react-router-dom";
 
 const ResultCard = ({
   league_logo,
   league_name,
   league_year,
+  match_id,
   match_awayteam_name,
   match_awayteam_score,
   match_date,
@@ -14,9 +16,18 @@ const ResultCard = ({
   team_away_badge,
   team_home_badge,
   match_status,
+  match_hometeam_halftime_score,
+  match_awayteam_halftime_score,
 }) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="result-card-main">
+    <div
+      className="result-card-main"
+      onClick={() => {
+        navigate(`/stats/${match_id}`);
+      }}
+    >
       <div className="result-card-second">
         <div className="result-card-head">
           <p className="result-date-time">

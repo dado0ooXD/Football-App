@@ -61,9 +61,21 @@ const Results = () => {
               {/* <h5>{results[0]?.country_name}</h5> */}
             </div>
           </div>
-          {results.map((item, index) => (
-            <ResultCard key={index} {...item} />
-          ))}
+          {results.length > 0 ? (
+            results.map((item, index) => <ResultCard key={index} {...item} />)
+          ) : (
+            <div
+              style={{
+                height: "100vh",
+                width: "100%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <h1>No data for this event!</h1>
+            </div>
+          )}
         </div>
       )}
     </Layout>
