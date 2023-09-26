@@ -13,6 +13,7 @@ const ResultCard = ({
   match_time,
   team_away_badge,
   team_home_badge,
+  match_status,
 }) => {
   return (
     <div className="result-card-main">
@@ -22,6 +23,8 @@ const ResultCard = ({
             {match_time}
             <br />
             {match_date}
+            <br />
+            {match_status}
           </p>
         </div>
         <div className="result-card-body">

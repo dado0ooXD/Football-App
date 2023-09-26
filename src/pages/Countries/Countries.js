@@ -4,6 +4,7 @@ import Layout from "../../Layout/Layout";
 import { useDispatch, useSelector } from "react-redux";
 import countriesSlice, { getAllCountries } from "../../store/countriesSlice";
 import CountriesCard from "../../components/CountriesCard/CountriesCard";
+import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 
 const Countries = () => {
   const [search, setSearch] = useState("");
@@ -28,7 +29,7 @@ const Countries = () => {
             alignItems: "center",
           }}
         >
-          <h1 style={{ color: "black" }}>Loading...</h1>
+          <LoadingSpinner />
         </div>
       ) : (
         <div

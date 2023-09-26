@@ -36,7 +36,7 @@ const resultsSlice = createSlice({
     });
     builder.addCase(getResults.rejected, (state, action) => {
       state.loading = false;
-      state.error = true;
+      state.error = "No results for this competition!";
       console.log(action.payload);
     });
   },

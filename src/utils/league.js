@@ -30,7 +30,7 @@ export const leagues = [
     league_name: "Bundesliga",
 
     name: "Germany",
-    league_id: "171",
+    league_id: "175",
     league_logo:
       "https://apiv3.apifootball.com/badges/logo_leagues/175_bundesliga.png",
     country_logo:

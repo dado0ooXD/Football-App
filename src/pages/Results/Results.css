@@ -6,3 +6,20 @@
   display: flex;
   flex-direction: column;
 }
+
+.results-info-title {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+.results-info-title h3 {
+  margin-left: 15px;
+  color: white;
+}
+
+.results-info-logo {
+  height: 30px;
+  width: 50px;
+  margin-bottom: 10px;
+}
