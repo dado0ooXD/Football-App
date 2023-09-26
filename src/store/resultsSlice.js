@@ -43,9 +43,19 @@ export const getMatchStats = createAsyncThunk(
         "Passes Accurate",
       ];
       const dobijeni = data[`${matchId}`]?.statistics;
-      const finalData = dobijeni.filter((item, index) =>
+      const opetDobijeni = dobijeni.filter((item) =>
         statsProps.includes(item.type)
       );
+      const duplicated = [];
+      const finalData = opetDobijeni.filter((item) => {
+        const isDuplicated = duplicated.includes(item.type);
+        if (!isDuplicated) {
+          duplicated.push(item.type);
+          return true;
+        }
+        return false;
+      });
+
       return finalData;
     } catch (error) {
       console.log(error);
