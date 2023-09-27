@@ -41,16 +41,7 @@ const Header = () => {
                   to="/countries"
                   style={{ textDecoration: "none", color: "white" }}
                 >
-                  Countries
-                </Link>
-              </li>
-              <li className="nav-tab">
-                {" "}
-                <Link
-                  to="/countries"
-                  style={{ textDecoration: "none", color: "white" }}
-                >
-                  Nzm
+                  All Leagues
                 </Link>
               </li>
             </ul>

@@ -81,11 +81,21 @@ const Results = () => {
             <div className="results-schedule">
               <button
                 className="results-prev-upcoming results-button"
+                style={{
+                  border:
+                    fromDate === prevSevenDays ? "1px solid white" : "none",
+                }}
                 onClick={prevResults}
               >
                 Results
               </button>
-              <button className="results-prev-upcoming" onClick={upcoming}>
+              <button
+                className="results-prev-upcoming"
+                onClick={upcoming}
+                style={{
+                  border: fromDate === fullDate ? "1px solid white" : "none",
+                }}
+              >
                 Upcoming
               </button>
             </div>

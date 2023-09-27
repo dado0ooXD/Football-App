@@ -20,9 +20,31 @@ const Stats = () => {
     <Layout>
       <div className="stats-main">
         <div className="stats-container">
-          {stats.map((item, index) => (
-            <StatsCard key={index} {...item} />
-          ))}
+          {stats.length > 0 ? (
+            <>
+              <div className="stats-title">
+                <h1>Home</h1>
+                <h1>Away</h1>
+              </div>
+              {stats.map((item, index) => (
+                <StatsCard key={index} {...item} />
+              ))}
+            </>
+          ) : (
+            <div
+              style={{
+                height: "88vh",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                textAlign: "center",
+              }}
+            >
+              <h1>
+                When the match starts the <br /> statistics will be available.
+              </h1>
+            </div>
+          )}
         </div>
       </div>
     </Layout>
