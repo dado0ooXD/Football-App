@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Results.css";
 import Layout from "../../Layout/Layout";
 import { useParams } from "react-router-dom";
@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getResults } from "../../store/resultsSlice";
 import ResultCard from "../../components/ResultCard/ResultCard";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
+import { nextSevenDays, prevSevenDays } from "../../utils/dates";
 
 const Results = () => {
   const { id } = useParams();
@@ -20,9 +21,26 @@ const Results = () => {
   const day = String(date.getDate()).padStart(2, "0");
   const fullDate = `${year}-${month}-${day}`;
 
+  // From To
+  const [fromDate, setFromDate] = useState(prevSevenDays);
+  const [toDate, setToDate] = useState(fullDate);
+
+  // Upcoming matches
+  const upcoming = () => {
+    setFromDate(fullDate);
+    setToDate(nextSevenDays);
+  };
+
+  // Previous matches
+  const prevResults = () => {
+    setFromDate(prevSevenDays);
+    setToDate(fullDate);
+  };
+
   useEffect(() => {
-    dispatch(getResults({ id: id, toDate: fullDate }));
-  }, [id]);
+    dispatch(getResults({ id: id, fromDate: fromDate, toDate: toDate }));
+  }, [id, fromDate, toDate]);
+
   return (
     <Layout>
       {loading ? (
@@ -59,6 +77,17 @@ const Results = () => {
                 </span>
               </h3>
               {/* <h5>{results[0]?.country_name}</h5> */}
+            </div>
+            <div className="results-schedule">
+              <button
+                className="results-prev-upcoming results-button"
+                onClick={prevResults}
+              >
+                Results
+              </button>
+              <button className="results-prev-upcoming" onClick={upcoming}>
+                Upcoming
+              </button>
             </div>
           </div>
           {results.length > 0 ? (

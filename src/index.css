@@ -48,7 +48,7 @@ code {
   /* margin-left: 20px; */
 }
 
-@media screen and (max-width: 1026px) {
+@media screen and (max-width: 1166px) {
   .content-container {
     display: flex;
     flex-direction: column;
@@ -64,7 +64,7 @@ code {
   }
 }
 
-@media (min-width: 1026px) {
+@media (min-width: 1166px) {
   .content {
     margin-left: 20px;
   }

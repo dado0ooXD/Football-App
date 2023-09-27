@@ -7,6 +7,16 @@
   flex-direction: column;
 }
 
+.results-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.results-schedule {
+  margin-right: 5px;
+}
+
 .results-info-title {
   display: flex;
   align-items: center;
@@ -22,4 +32,18 @@
   height: 30px;
   width: 50px;
   margin-bottom: 10px;
+}
+
+.results-prev-upcoming {
+  padding: 10px 20px;
+  background-color: #181818;
+  border-radius: 10px;
+  border: none;
+  color: white;
+  font-family: "Jost";
+  cursor: pointer;
+}
+
+.results-button {
+  margin-right: 10px;
 }

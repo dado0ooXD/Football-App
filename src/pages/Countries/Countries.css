@@ -38,13 +38,13 @@
   }
 }
 
-@media (min-width: 937px) {
+@media (min-width: 900px) {
   .countries-main {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-@media (min-width: 1470px) {
+@media (min-width: 1500px) {
   .countries-main {
     grid-template-columns: repeat(4, 1fr);
   }

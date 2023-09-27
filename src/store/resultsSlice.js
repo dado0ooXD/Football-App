@@ -6,9 +6,9 @@ export const getResults = createAsyncThunk(
   "results/getResults",
   async (args) => {
     try {
-      const { id, toDate } = args;
+      const { id, fromDate, toDate } = args;
       const response = await axios.get(
-        `https://apiv3.apifootball.com/?action=get_events&from=2023-09-17&to=${toDate}&league_id=${id}&APIkey=${process.env.REACT_APP_API_KEY}`
+        `https://apiv3.apifootball.com/?action=get_events&from=${fromDate}&to=${toDate}&league_id=${id}&APIkey=${process.env.REACT_APP_API_KEY}`
       );
       const data = await response.data;
       return data;

@@ -12,8 +12,7 @@ export const leagues = [
     league_name: "La Liga",
     name: "Spain",
     league_id: "302",
-    league_logo:
-      "https://ww1.freelogovectors.net/wp-content/uploads/2023/07/laliga-logo-02-freelogovectors.net_.png",
+    league_logo: "https://api.sofascore.app/api/v1/unique-tournament/8/image",
     country_logo:
       "https://apiv3.apifootball.com/badges/logo_country/6_spain.png",
   },
