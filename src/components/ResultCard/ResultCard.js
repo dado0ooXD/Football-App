@@ -24,9 +24,9 @@ const ResultCard = ({
   return (
     <div
       className="result-card-main"
-      onClick={() => {
-        navigate(`/stats/${match_id}`);
-      }}
+      // onClick={() => {
+      //   navigate(`/stats/${match_id}`);
+      // }}
     >
       <div className="result-card-second">
         <div className="result-card-head">
@@ -52,7 +52,14 @@ const ResultCard = ({
             />
           </div>
           <div>
-            <p className="match-name">{match_hometeam_name}</p>
+            <p
+              className="match-name"
+              onClick={() => {
+                console.log("hi");
+              }}
+            >
+              {match_hometeam_name}
+            </p>
             <p className="match-name">{match_awayteam_name}</p>
           </div>
         </div>

@@ -37,6 +37,7 @@
 .match-name {
   color: white;
   margin-left: 10px;
+  cursor: pointer;
 }
 
 .team-badges {

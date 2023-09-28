@@ -11,8 +11,7 @@ const StatsCard = ({ type, home, away }) => {
       <div
         style={{
           height: "4px",
-          backgroundColor:
-            home > away ? "green" : home === away ? "white" : "red",
+          backgroundColor: "gray",
           width: "50%",
         }}
       ></div>
@@ -22,8 +21,7 @@ const StatsCard = ({ type, home, away }) => {
       <div
         style={{
           height: "4px",
-          backgroundColor:
-            away > home ? "green" : home === away ? "white" : "red",
+          backgroundColor: "gray",
           width: "50%",
         }}
       ></div>

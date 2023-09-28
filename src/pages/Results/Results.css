@@ -1,7 +1,7 @@
 .results-container {
   height: 91vh;
   width: 100%;
-  padding: 20px;
+  padding: 30px;
   overflow-y: auto;
   display: flex;
   flex-direction: column;

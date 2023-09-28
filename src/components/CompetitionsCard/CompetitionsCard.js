@@ -13,10 +13,7 @@ const CompetitionsCard = ({
   const navigate = useNavigate();
 
   return (
-    <div
-      className="competitions-card"
-      onClick={() => navigate(`/results/${league_id}`)}
-    >
+    <div className="competitions-card">
       <div className="competitions-card-header">
         <img
           src={league_logo ? league_logo : country_logo}
@@ -26,6 +23,20 @@ const CompetitionsCard = ({
         <h2 className="league-name-competitions">{league_name}</h2>
       </div>
       <div className="competitions-card-body">
+        <button
+          onClick={() => navigate(`/results/${league_id}`)}
+          className="competitions-button"
+        >
+          Results
+        </button>
+        <button
+          onClick={() => navigate(`/standings/${league_id}`)}
+          className="competitions-button"
+          style={{ marginLeft: "10px" }}
+        >
+          Standing
+        </button>
+
         {/* <img
           src={country_logo}
           alt="country_logo"
