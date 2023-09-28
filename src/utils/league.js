@@ -54,4 +54,20 @@ export const leagues = [
     country_logo:
       "https://logowik.com/content/uploads/images/994_champions_league.jpg",
   },
+  {
+    league_name: "La Liga",
+    name: "Spain",
+    league_id: "302",
+    league_logo: "https://api.sofascore.app/api/v1/unique-tournament/8/image",
+    country_logo:
+      "https://apiv3.apifootball.com/badges/logo_country/6_spain.png",
+  },
+  {
+    league_name: "La Liga",
+    name: "Spain",
+    league_id: "302",
+    league_logo: "https://api.sofascore.app/api/v1/unique-tournament/8/image",
+    country_logo:
+      "https://apiv3.apifootball.com/badges/logo_country/6_spain.png",
+  },
 ];

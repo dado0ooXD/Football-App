@@ -31,7 +31,7 @@ const standingsSlice = createSlice({
     });
     builder.addCase(getAllStandings.fulfilled, (state, action) => {
       state.loading = false;
-      state.countries = action.payload;
+      state.standings = action.payload;
       console.log(action.payload);
     });
     builder.addCase(getAllStandings.rejected, (state, action) => {

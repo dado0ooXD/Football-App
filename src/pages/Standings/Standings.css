@@ -1,0 +1,41 @@
+.standings-main {
+  height: 93vh;
+  width: 100%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.standings-head {
+  background-color: #181818;
+  color: white;
+  border-radius: 15px;
+  padding: 0 20px;
+}
+
+.standings-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.standings-body {
+  background-color: #111;
+  width: 100%;
+}
+
+.standings-table {
+  width: 100%;
+}
+
+table {
+  padding: 10px;
+  margin-top: 25px;
+
+  border-radius: 20px;
+  background-color: #181818;
+}
+
+th {
+  color: white;
+}
