@@ -55,3 +55,9 @@
 .match-score {
   color: white;
 }
+
+@media (max-width: 634px) {
+  .result-card-main {
+    padding: 20px;
+  }
+}

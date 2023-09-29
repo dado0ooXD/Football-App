@@ -7,11 +7,12 @@ const Header = () => {
     <header>
       <div className="nav-wrapper">
         <div className="logo-container">
-          <img
+          {/* <img
             src="https://res.cloudinary.com/skillsmatter/image/upload/c_crop,g_custom/v1567091866/mhxmtdmg97hvpsh9fewi.png"
             alt="app-logo"
             className="app-logo"
-          />
+          /> */}
+          <h2 style={{ color: "white" }}>LiveScore</h2>
         </div>
         <nav>
           <input className="hidden" type="checkbox" id="menuToggle" />

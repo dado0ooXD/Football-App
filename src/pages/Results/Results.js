@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import "./Results.css";
 import Layout from "../../Layout/Layout";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { getResults } from "../../store/resultsSlice";
+import { getResults, setResultsTo } from "../../store/resultsSlice";
 import ResultCard from "../../components/ResultCard/ResultCard";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 import { nextSevenDays, prevSevenDays } from "../../utils/dates";
@@ -11,6 +11,7 @@ import { nextSevenDays, prevSevenDays } from "../../utils/dates";
 const Results = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const results = useSelector((state) => state.results.results);
   const loading = useSelector((state) => state.results.loading);
 
@@ -39,7 +40,12 @@ const Results = () => {
 
   useEffect(() => {
     dispatch(getResults({ id: id, fromDate: fromDate, toDate: toDate }));
+    // return () => {
+    //   setResultsTo();
+    // };
   }, [id, fromDate, toDate]);
+
+  const uefa = results[0]?.league_name.split(" ")[0] === "UEFA";
 
   return (
     <Layout>
@@ -58,12 +64,17 @@ const Results = () => {
       ) : (
         <div className="results-container">
           <div className="results-info">
-            <div className="results-info-title">
+            <div
+              className="results-info-title"
+              onClick={() => navigate(`/standings/${id}`)}
+            >
               <img
                 src={
                   results[0]?.country_logo
                     ? results[0].country_logo
-                    : "https://upload.wikimedia.org/wikipedia/en/thumb/f/f5/UEFA_Champions_League.svg/225px-UEFA_Champions_League.svg.png"
+                    : uefa
+                    ? "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/2560px-Flag_of_Europe.svg.png"
+                    : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEURERGD9/d/AAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII="
                 }
                 alt="results_info_logo"
                 className="results-info-logo"

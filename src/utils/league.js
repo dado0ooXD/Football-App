@@ -52,22 +52,22 @@ export const leagues = [
     league_logo:
       "https://upload.wikimedia.org/wikinews/en/e/e2/UEFA_Champions_League_logo.png",
     country_logo:
-      "https://logowik.com/content/uploads/images/994_champions_league.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/2560px-Flag_of_Europe.svg.png",
   },
   {
-    league_name: "La Liga",
-    name: "Spain",
-    league_id: "302",
-    league_logo: "https://api.sofascore.app/api/v1/unique-tournament/8/image",
+    league_name: "Europa League",
+    name: "Europa League",
+    league_id: "4",
+    league_logo:
+      "https://logodownload.org/wp-content/uploads/2019/12/europa-league-logo-0.png",
     country_logo:
-      "https://apiv3.apifootball.com/badges/logo_country/6_spain.png",
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/2560px-Flag_of_Europe.svg.png",
   },
   {
-    league_name: "La Liga",
-    name: "Spain",
-    league_id: "302",
-    league_logo: "https://api.sofascore.app/api/v1/unique-tournament/8/image",
-    country_logo:
-      "https://apiv3.apifootball.com/badges/logo_country/6_spain.png",
+    league_name: "Conference League",
+    name: "Conference League",
+    league_id: "683",
+    league_logo: "https://www.fifplay.com/img/public/uecl-logo.png",
+    country_logo: "https://www.fifplay.com/img/public/uecl-logo.png",
   },
 ];

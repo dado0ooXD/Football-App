@@ -71,6 +71,12 @@ const resultsSlice = createSlice({
     loading: false,
     error: false,
   },
+  // reducers: {
+  //   setResultsTo: (state) => {
+  //     state.results = [];
+  //     return state;
+  //   },
+  // },
 
   extraReducers: (builder) => {
     builder.addCase(getResults.pending, (state) => {
@@ -102,3 +108,4 @@ const resultsSlice = createSlice({
 });
 
 export default resultsSlice.reducer;
+// export const { setResultsTo } = resultsSlice.actions;

@@ -160,3 +160,9 @@ header {
     }
   }
 }
+
+@media (max-width: 575px) {
+  .nav-wrapper {
+    width: 85%;
+  }
+}

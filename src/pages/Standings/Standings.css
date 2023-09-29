@@ -12,6 +12,29 @@
   color: white;
   border-radius: 15px;
   padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.standings-head h2 {
+  cursor: pointer;
+}
+
+.standings-promotions {
+  display: flex;
+  margin-left: 20px;
+}
+
+.promotion-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.standings-promotions h5 {
+  margin-left: 10px;
 }
 
 .standings-title {
@@ -38,4 +61,43 @@ table {
 
 th {
   color: white;
+}
+
+@media (max-width: 600px) {
+  .standings-body {
+    overflow-x: scroll;
+  }
+
+  .standings-table {
+    overflow-x: scroll;
+    width: 400px;
+  }
+
+  .standings-promotions {
+    flex-direction: column;
+  }
+
+  .standings-promotions h5 {
+    display: none;
+  }
+
+  .standings-promotions {
+    width: 80px;
+    flex-direction: row;
+    padding-bottom: 20px;
+    justify-content: space-between;
+  }
+
+  .promotion-item {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 738px) {
+  .standings-head {
+    flex-direction: column;
+  }
+  .standings-promotions {
+    margin-left: 0;
+  }
 }

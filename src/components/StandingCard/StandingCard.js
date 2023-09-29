@@ -16,21 +16,22 @@ const StandingCard = ({
   team_badge,
 }) => {
   const relegation = overall_promotion.split(" ")[0] === "Relegation";
-  const promotion = overall_promotion.split(" ")[2] === "Champions";
+  const promotionCL = overall_promotion.split(" ")[2] === "Champions";
   const leagueEurope = overall_promotion.split(" ")[2] === "Europa";
+  const promotionColor = promotionCL
+    ? "#0075ff"
+    : relegation
+    ? "#961a3d"
+    : leagueEurope
+    ? "#ab5e03"
+    : "white";
 
   return (
     <tr>
       <th style={{ marginLeft: "20px" }}>
         <span
           style={{
-            color: promotion
-              ? "blue"
-              : relegation
-              ? "red"
-              : leagueEurope
-              ? "green"
-              : "white",
+            color: promotionColor,
           }}
         >
           {overall_league_position}

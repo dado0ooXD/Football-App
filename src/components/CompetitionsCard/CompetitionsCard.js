@@ -29,13 +29,17 @@ const CompetitionsCard = ({
         >
           Results
         </button>
-        <button
-          onClick={() => navigate(`/standings/${league_id}`)}
-          className="competitions-button"
-          style={{ marginLeft: "10px" }}
-        >
-          Standing
-        </button>
+        {league_name.includes("Cup" || "Shield") ? (
+          <></>
+        ) : (
+          <button
+            onClick={() => navigate(`/standings/${league_id}`)}
+            className="competitions-button"
+            style={{ marginLeft: "10px" }}
+          >
+            Standing
+          </button>
+        )}
 
         {/* <img
           src={country_logo}
