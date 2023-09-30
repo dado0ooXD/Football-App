@@ -29,15 +29,21 @@ const ResultCard = ({
       // }}
     >
       <div className="result-card-second">
-        <div className="result-card-head">
-          <p className="result-date-time">
-            {match_time}
-            <br />
-            {match_date}
-            <br />
-            {match_status}
-          </p>
-        </div>
+        {match_status ? (
+          <div className="result-card-live">
+            <p>{match_status === "Finished" ? "FT" : match_status}</p>
+          </div>
+        ) : (
+          <div className="result-card-head">
+            <p className="result-date-time">
+              {match_time}
+              <br />
+              {match_date}
+              <br />
+              {match_status}
+            </p>
+          </div>
+        )}
         <div className="result-card-body">
           <div className="team-badges">
             <img

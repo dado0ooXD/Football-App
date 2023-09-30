@@ -56,6 +56,13 @@
   color: white;
 }
 
+.result-card-live {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+}
+
 @media (max-width: 634px) {
   .result-card-main {
     padding: 20px;

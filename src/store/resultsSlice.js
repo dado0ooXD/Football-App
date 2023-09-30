@@ -63,11 +63,29 @@ export const getMatchStats = createAsyncThunk(
   }
 );
 
+// Live results
+
+export const getLIveResults = createAsyncThunk(
+  "results/getLiveResults",
+  async () => {
+    try {
+      const response = await axios.get(
+        `https://apiv3.apifootball.com/?action=get_events&match_live=1&APIkey=${process.env.REACT_APP_API_KEY}`
+      );
+      const data = await response.data;
+      return data.slice(0, 100);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+);
+
 const resultsSlice = createSlice({
   name: "results",
   initialState: {
     results: [],
     stats: [],
+    live: [],
     loading: false,
     error: false,
   },
@@ -102,6 +120,20 @@ const resultsSlice = createSlice({
     });
     builder.addCase(getMatchStats.rejected, (state, action) => {
       state.error = "No stats";
+      console.log(action.payload);
+    });
+
+    builder.addCase(getLIveResults.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(getLIveResults.fulfilled, (state, action) => {
+      state.loading = false;
+      state.live = action.payload;
+      console.log("Results =====> ", action.payload);
+    });
+    builder.addCase(getLIveResults.rejected, (state, action) => {
+      state.loading = false;
+      state.error = "No results for this competition!";
       console.log(action.payload);
     });
   },

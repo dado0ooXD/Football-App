@@ -14,7 +14,11 @@ const Standings = () => {
   const teams = useSelector((state) => state.standings.standings);
 
   useEffect(() => {
-    dispatch(getAllStandings(id));
+    const promise = dispatch(getAllStandings(id));
+    return () => {
+      promise.abort();
+      console.log("Aborted");
+    };
   }, []);
 
   console.log(teams);

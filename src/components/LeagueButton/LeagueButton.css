@@ -1,5 +1,5 @@
 .league-button {
-  /* background-color: #181818; */
+  background-color: #181818;
   padding: 0 25px;
   border-radius: 15px;
   display: flex;
@@ -27,8 +27,8 @@
   }
 }
 
-@media (min-width: 1166px) {
+@media (max-width: 1166px) {
   .league-button {
-    background-color: #181818;
+    background-color: #111;
   }
 }
