@@ -6,6 +6,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { getAllStandings } from "../../store/standingsSlice";
 import StandingCard from "../../components/StandingCard/StandingCard";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
+import SportsSoccerIcon from "@mui/icons-material/SportsSoccer";
 
 const Standings = () => {
   const { id } = useParams();
@@ -14,14 +15,9 @@ const Standings = () => {
   const teams = useSelector((state) => state.standings.standings);
 
   useEffect(() => {
-    const promise = dispatch(getAllStandings(id));
-    return () => {
-      promise.abort();
-      console.log("Aborted");
-    };
+    dispatch(getAllStandings(id));
   }, []);
 
-  console.log(teams);
   return (
     <Layout>
       {teams.length > 0 ? (
@@ -35,6 +31,7 @@ const Standings = () => {
                 {teams[0].country_name}
               </span>
             </h2>
+
             <div className="standings-promotions">
               <div className="promotion-item">
                 <div
@@ -67,6 +64,15 @@ const Standings = () => {
                   }}
                 ></div>
                 <h5>Relagation</h5>
+              </div>
+
+              <div className="promotion-item">
+                <SportsSoccerIcon
+                  style={{ cursor: "pointer" }}
+                  onClick={() => {
+                    navigate(`/topscorers/${id}`);
+                  }}
+                />
               </div>
             </div>
           </div>

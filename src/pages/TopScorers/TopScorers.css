@@ -1,0 +1,47 @@
+.topscorers-main {
+  height: 93vh;
+  width: 100%;
+  padding: 10px 30px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  border-radius: 20px;
+}
+
+.topscorers-head {
+  margin-left: 10px;
+}
+
+.topscorers-body {
+  background-color: #181818;
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px 0;
+}
+
+.topscorers-table {
+  width: 100%;
+
+  /* margin-top: 25px;
+  padding: 20px 0; */
+  border-radius: 20px;
+  background-color: #181818;
+}
+
+@media (max-width: 720px) {
+  .topscorers-team-th {
+    display: none;
+  }
+
+  .topscorers-team-td {
+    display: none;
+  }
+  /* .topscorers-table {
+    width: 500px;
+  }
+
+  .topscorers-body {
+    width: 500px;
+    overflow-x: scroll;
+  } */
+}

@@ -25,6 +25,10 @@
   flex: 1;
 }
 
+.home-live-head {
+  padding-bottom: 5px;
+}
+
 @media (max-width: 1350px) {
   .home-container {
     flex-direction: column;

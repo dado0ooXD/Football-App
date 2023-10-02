@@ -6,6 +6,7 @@ const ResultCard = ({
   league_logo,
   league_name,
   league_year,
+  country_logo,
   match_id,
   match_awayteam_name,
   match_awayteam_score,
@@ -19,7 +20,7 @@ const ResultCard = ({
   match_hometeam_halftime_score,
   match_awayteam_halftime_score,
 }) => {
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   return (
     <div
@@ -31,7 +32,18 @@ const ResultCard = ({
       <div className="result-card-second">
         {match_status ? (
           <div className="result-card-live">
-            <p>{match_status === "Finished" ? "FT" : match_status}</p>
+            <p
+              style={{
+                color:
+                  match_status === "Half Time"
+                    ? "chocolate"
+                    : match_status === "Finished"
+                    ? "gray"
+                    : "green",
+              }}
+            >
+              {match_status}
+            </p>
           </div>
         ) : (
           <div className="result-card-head">
@@ -47,12 +59,12 @@ const ResultCard = ({
         <div className="result-card-body">
           <div className="team-badges">
             <img
-              src={team_home_badge}
+              src={team_home_badge ? team_home_badge : country_logo}
               className="team-badge"
               alt="home_badge"
             />
             <img
-              src={team_away_badge}
+              src={team_away_badge ? team_away_badge : country_logo}
               className="team-badge"
               alt="away_badge"
             />

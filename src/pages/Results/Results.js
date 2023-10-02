@@ -7,6 +7,7 @@ import { getResults, setResultsTo } from "../../store/resultsSlice";
 import ResultCard from "../../components/ResultCard/ResultCard";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 import { nextSevenDays, prevSevenDays } from "../../utils/dates";
+import { fullDate } from "../../utils/dates";
 
 const Results = () => {
   const { id } = useParams();
@@ -14,13 +15,6 @@ const Results = () => {
   const navigate = useNavigate();
   const results = useSelector((state) => state.results.results);
   const loading = useSelector((state) => state.results.loading);
-
-  // Today's date
-  const date = new Date();
-  const year = date.getFullYear();
-  const month = String(date.getMonth() + 1).padStart(2, "0");
-  const day = String(date.getDate()).padStart(2, "0");
-  const fullDate = `${year}-${month}-${day}`;
 
   // From To
   const [fromDate, setFromDate] = useState(prevSevenDays);

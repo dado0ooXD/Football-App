@@ -7,6 +7,7 @@ import Competitions from "./pages/Competitions/Competitions";
 import Results from "./pages/Results/Results";
 import Stats from "./pages/Stats/Stats";
 import Standings from "./pages/Standings/Standings";
+import TopScorers from "./pages/TopScorers/TopScorers";
 
 function App() {
   //   const leagues = [
@@ -72,6 +73,7 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/topscorers/:id" element={<TopScorers />} />
         <Route path="/results/:id" element={<Results />} />
         <Route path="/teams" element={<Teams />} />
         <Route path="/countries" element={<Countries />} />

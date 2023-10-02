@@ -73,7 +73,21 @@ export const getLIveResults = createAsyncThunk(
         `https://apiv3.apifootball.com/?action=get_events&match_live=1&APIkey=${process.env.REACT_APP_API_KEY}`
       );
       const data = await response.data;
-      return data.slice(0, 100);
+      return data
+        .slice(0, 100)
+        .sort((a, b) => {
+          if (a.country_name === "England" && b.country_name !== "England") {
+            return -1; // Stavka 'a' ide pre 'b'
+          } else if (
+            a.country_name !== "England" &&
+            b.country_name === "England"
+          ) {
+            return 1; // Stavka 'b' ide pre 'a'
+          } else {
+            return 0; // Nema promene redosleda
+          }
+        })
+        .filter((item, index) => item.match_status !== "Finished");
     } catch (error) {
       console.log(error);
     }

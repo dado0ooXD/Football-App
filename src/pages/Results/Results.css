@@ -49,7 +49,7 @@
   margin-right: 10px;
 }
 
-@media (max-width: 552px) {
+@media (max-width: 636px) {
   .results-info {
     flex-direction: column;
   }

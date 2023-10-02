@@ -49,9 +49,6 @@
 
 .standings-table {
   width: 100%;
-}
-
-table {
   margin-top: 25px;
   padding: 20px 0;
   border-radius: 20px;
@@ -62,7 +59,7 @@ th {
   color: white;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 664px) {
   .standings-body {
     overflow-x: scroll;
   }
@@ -87,7 +84,7 @@ th {
   }
 }
 
-@media (max-width: 748px) {
+@media (max-width: 907px) {
   .standings-head {
     flex-direction: column;
   }
