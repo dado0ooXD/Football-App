@@ -17,7 +17,7 @@ export const getAllStandings = createAsyncThunk(
   }
 );
 
-// Standings
+// Topscorers
 export const getTopSocrers = createAsyncThunk(
   "standings/getTopSocrers",
   async (id) => {
