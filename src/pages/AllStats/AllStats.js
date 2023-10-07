@@ -96,31 +96,281 @@ const AllStats = () => {
                 <div className="home-stands">
                   {popUpStat
                     .filter((item) => Number(item.time) < 45)
-                    .map((item) => (
-                      <p>{item.time}</p>
+                    .map((item, index) => (
+                      <div key={index} className="feedback-home">
+                        <p
+                          style={{
+                            display:
+                              item.home_assist ||
+                              item.home_scorer ||
+                              item.home_fault
+                                ? "inline-block"
+                                : "none",
+                          }}
+                        >
+                          {item.time}{" "}
+                        </p>{" "}
+                        <h4 style={{ marginLeft: "10px" }}>
+                          {item.home_scorer}
+                          {item.home_fault}
+                          <span
+                            style={{
+                              marginLeft: "10px",
+                              display: item.home_assist
+                                ? item.home_assist
+                                : "none",
+                            }}
+                          >
+                            ({item.home_assist})
+                          </span>
+                          {/* <span
+                            style={{
+                              display:
+                                item.home_assist ||
+                                item.home_scorer ||
+                                item.home_fault
+                                  ? "inline-block"
+                                  : "none",
+                              color: "yellow",
+                            }}
+                          >
+                            ({item.home_assist})
+                          </span> */}
+                          <span
+                            style={{
+                              marginLeft: "15px",
+
+                              display:
+                                item.home_assist ||
+                                item.home_scorer ||
+                                item.home_fault
+                                  ? "inline-block"
+                                  : "none",
+                              color: "yellow",
+                            }}
+                          >
+                            {item.card}
+                          </span>
+                          <span>{item.substitution}</span>
+                        </h4>
+                      </div>
+                    ))}
+                </div>
+                <div className="away-stands">
+                  {popUpStat
+                    .filter((item) => Number(item.time) < 45)
+                    .map((item, index) => (
+                      <div key={index} className="feedback-away">
+                        <span
+                          style={{
+                            marginLeft: "15px",
+                            display: item.card ? "inline-block" : "none",
+                          }}
+                        >
+                          <span
+                            style={{
+                              display:
+                                item.away_assist ||
+                                item.away_scorer ||
+                                item.away_fault
+                                  ? "inline-block"
+                                  : "none",
+                              marginRight: "10px",
+                              color: "yellow",
+                            }}
+                          >
+                            {item.card}{" "}
+                          </span>
+                        </span>{" "}
+                        <h4 style={{ marginRight: "10px" }}>
+                          <span
+                            style={{
+                              marginLeft: "10px",
+                              display: item.away_assist
+                                ? item.away_assist
+                                : "none",
+                              marginRight: "10px",
+                            }}
+                          >
+                            ({item.away_assist})
+                          </span>
+                          {item.away_scorer}
+
+                          {item.away_fault}
+
+                          {/* <span
+                            style={{
+                              display: item.home_assist
+                                ? "inline-block"
+                                : "none",
+                            }}
+                          >
+                            ({item.home_assist})
+                          </span> */}
+                        </h4>
+                        <p
+                          style={{
+                            display:
+                              item.away_assist ||
+                              item.away_scorer ||
+                              item.away_fault
+                                ? "inline-block"
+                                : "none",
+                          }}
+                        >
+                          {item.time}{" "}
+                        </p>
+                      </div>
+                    ))}
+                </div>
+              </div>
+            </div>
+            <div className="away-team-info">
+              <div className="away-team-info-head">
+                <span>Second half</span>
+              </div>
+              <div className="stands">
+                <div className="home-stands">
+                  {popUpStat
+                    .filter((item) => Number(item.time) > 45)
+                    .map((item, index) => (
+                      <div key={index} className="feedback-home">
+                        <p
+                          style={{
+                            display:
+                              item.home_assist ||
+                              item.home_scorer ||
+                              item.home_fault ||
+                              item.substitution
+                                ? "inline-block"
+                                : "none",
+                          }}
+                        >
+                          {item.time}{" "}
+                        </p>{" "}
+                        <h4 style={{ marginLeft: "10px" }}>
+                          {item.home_scorer}
+                          {item.home_fault}
+                          <span
+                            style={{
+                              marginLeft: "10px",
+                              display: item.home_assist
+                                ? item.home_assist
+                                : "none",
+                            }}
+                          >
+                            ({item.home_assist})
+                          </span>
+                          {/* <span
+                            style={{
+                              display:
+                                item.home_assist ||
+                                item.home_scorer ||
+                                item.home_fault
+                                  ? "inline-block"
+                                  : "none",
+                              color: "yellow",
+                            }}
+                          >
+                            ({item.home_assist})
+                          </span> */}
+                          <span
+                            style={{
+                              marginLeft: "15px",
+
+                              display:
+                                item.home_assist ||
+                                item.home_scorer ||
+                                item.home_fault
+                                  ? "inline-block"
+                                  : "none",
+                              color: "yellow",
+                            }}
+                          >
+                            {item.card}
+                          </span>
+                          <span>{item.substitution}</span>
+                        </h4>
+                      </div>
                     ))}
                 </div>
                 <div className="away-stands">
                   {popUpStat
                     .filter((item) => Number(item.time) > 45)
-                    .map((item) => (
-                      <p>{item.time}</p>
+                    .map((item, index) => (
+                      <div key={index} className="feedback-away">
+                        <p
+                          style={{
+                            display:
+                              item.home_assist ||
+                              item.home_scorer ||
+                              item.home_fault
+                                ? "inline-block"
+                                : "none",
+                          }}
+                        >
+                          {item.time}{" "}
+                        </p>
+                        <span
+                          style={{
+                            marginLeft: "15px",
+                            display: item.card ? "inline-block" : "none",
+                          }}
+                        >
+                          <span
+                            style={{
+                              display:
+                                item.away_assist ||
+                                item.away_scorer ||
+                                item.away_fault
+                                  ? "inline-block"
+                                  : "none",
+                              marginRight: "10px",
+                              color: "yellow",
+                            }}
+                          >
+                            {item.card}{" "}
+                          </span>
+                        </span>{" "}
+                        <h4 style={{ marginRight: "10px" }}>
+                          <span
+                            style={{
+                              display: item.away_assist
+                                ? item.away_assist
+                                : "none",
+                              marginRight: "10px",
+                            }}
+                          >
+                            ({item.away_assist})
+                          </span>
+                          {item.away_scorer}
+                          {item.away_fault}
+
+                          {/* <span
+                            style={{
+                              display: item.home_assist
+                                ? "inline-block"
+                                : "none",
+                            }}
+                          >
+                            ({item.home_assist})
+                          </span> */}
+                        </h4>
+                        <p
+                          style={{
+                            display:
+                              item.away_assist ||
+                              item.away_scorer ||
+                              item.away_fault
+                                ? "inline-block"
+                                : "none",
+                          }}
+                        >
+                          {item.time}{" "}
+                        </p>
+                      </div>
                     ))}
                 </div>
-              </div>
-              {/* <div style={{ backgroundColor: "green" }}>
-                {popUpStat
-                  .filter((item) => Number(item.time) < 45)
-                  .map((item) => (
-                    <p>
-                      {item.time} {}
-                    </p>
-                  ))}
-              </div> */}
-            </div>
-            <div className="away-team-info">
-              <div className="away-team-info-head">
-                <span>Second half</span>
               </div>
             </div>
           </div>

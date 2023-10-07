@@ -125,3 +125,14 @@
 .time {
   font-weight: bold;
 }
+
+.feedback-home {
+  display: flex;
+  align-items: center;
+}
+
+.feedback-away {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
