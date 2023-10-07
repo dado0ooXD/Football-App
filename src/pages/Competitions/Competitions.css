@@ -1,11 +1,8 @@
 .competitions-main {
-  /* border: 1px solid black; */
-  /* width: 100%; */
   display: grid;
   grid-gap: 20px;
   border-radius: 20px;
   padding: 40px;
-  /* margin-left: 20px; */
 }
 
 @media (min-width: 692px) {

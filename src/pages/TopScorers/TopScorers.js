@@ -39,7 +39,7 @@ const TopScorers = () => {
             </thead>
 
             <tbody style={{ marginTop: "30px" }}>
-              {topScorers.map((item, index) => (
+              {topScorers?.map((item, index) => (
                 <TopScorersCard key={index} {...item} />
               ))}
             </tbody>

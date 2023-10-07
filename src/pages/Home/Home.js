@@ -14,6 +14,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const live = useSelector((state) => state.results.live);
   const loading = useSelector((state) => state.results.loading);
+  const newsLoading = useSelector((state) => state.news.loading);
   const news = useSelector((state) => state.news.news);
   const newsContainer = [news[0], news[1], news[2]];
 
@@ -41,24 +42,40 @@ const Home = () => {
               alignItems: "center",
             }}
           >
-            <h1>Loading...</h1>
+            <LoadingSpinner />
           </div>
         ) : (
           <div className="home-container">
             <div className="news-container">
-              <span
-                className="news-title"
-                style={{
-                  fontSize: "25px",
-                  fontWeight: "bold",
-                  marginLeft: "10px",
-                }}
-              >
-                News
-              </span>
-              {newsContainer.map((item, index) => (
-                <NewsCard key={index} {...item} />
-              ))}
+              {newsLoading ? (
+                <div
+                  style={{
+                    height: "100vh",
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <LoadingSpinner />
+                </div>
+              ) : (
+                <>
+                  {" "}
+                  <span
+                    className="news-title"
+                    style={{
+                      fontSize: "25px",
+                      fontWeight: "bold",
+                      marginLeft: "10px",
+                    }}
+                  >
+                    News
+                  </span>
+                  {newsContainer.map((item, index) => (
+                    <NewsCard key={index} {...item} />
+                  ))}
+                </>
+              )}
             </div>
             <div className="home-live-results">
               <div className="home-live-head">

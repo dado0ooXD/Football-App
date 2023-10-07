@@ -18,8 +18,6 @@ const Competitions = () => {
       <div
         style={{
           width: "100%",
-          height: "100vh",
-          overflowY: "scroll",
         }}
       >
         <div className="competitions-main">

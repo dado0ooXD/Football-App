@@ -1,0 +1,127 @@
+.match-stats {
+  background-color: #181818;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.match-stats-main {
+  height: 100vh;
+  background-color: #111;
+  width: 620px;
+  display: flex;
+  flex-direction: column;
+}
+
+.match-stats-head {
+  background-color: pink;
+  flex: 2;
+}
+
+.match-stats-body {
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+}
+
+.head-info {
+  height: 40px;
+  width: 100%;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+}
+
+.country_logo_one {
+  height: 25px;
+  width: 40px;
+  margin-left: 10px;
+}
+
+.head_badge {
+  height: 70px;
+  width: 70px;
+}
+
+.head-result {
+  height: 88%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.score-number {
+  font-size: 50px;
+  color: white;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.result-score {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.match-stats-footer {
+  flex: 0.5;
+  background-color: lightgray;
+}
+
+.home-team-info {
+  flex: 1;
+  background-color: gray;
+}
+
+.away-team-info {
+  flex: 1;
+  background-color: pink;
+}
+
+.home-team-info-head {
+  height: 40px;
+  width: 100%;
+  background-color: chocolate;
+  display: flex;
+  align-items: center;
+  /* padding-left: 10px; */
+}
+
+.away-team-info-head {
+  height: 40px;
+  width: 100%;
+  background-color: chocolate;
+  display: flex;
+  align-items: center;
+  /* padding-left: 10px; */
+}
+
+.stands {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+
+.home-stands {
+  flex: 1;
+  height: 100%;
+  background-color: lightblue;
+}
+
+.away-stands {
+  flex: 1;
+  height: 100%;
+  background-color: lightgreen;
+  text-align: right;
+}
+
+.scorer-name {
+  font-weight: bold;
+}
+
+.time {
+  font-weight: bold;
+}

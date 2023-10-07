@@ -1,6 +1,6 @@
 import React from "react";
 import "./ResultCard.css";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ResultCard = ({
   league_logo,
@@ -20,15 +20,16 @@ const ResultCard = ({
   match_hometeam_halftime_score,
   match_awayteam_halftime_score,
 }) => {
-  // const navigate = useNavigate();
+  const openPopUp = () => {
+    const url = `http://localhost:3000/matchstats/${match_id}`;
+    const windowName = "Popup";
+    const windowFeatures = "width=650,height=850";
+
+    window.open(url, windowName, windowFeatures);
+  };
 
   return (
-    <div
-      className="result-card-main"
-      // onClick={() => {
-      //   navigate(`/stats/${match_id}`);
-      // }}
-    >
+    <div className="result-card-main" onClick={openPopUp}>
       <div className="result-card-second">
         {match_status ? (
           <div className="result-card-live">

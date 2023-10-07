@@ -13,10 +13,10 @@ const NewsCard = ({
   return (
     <div className="news-card">
       <div className="news-card-head">
-        <h4 style={{ width: "200px" }}>{title?.slice(0, 70)}</h4>
-        <a href={url} target="_blank">
+        <a href={url} target="_blank" rel="noreferrer">
           <img className="news-card-img" src={urlToImage} alt="news-img" />
-        </a>
+        </a>{" "}
+        <h4 style={{ width: "200px" }}>{title?.slice(0, 70)}</h4>
       </div>
       <div className="news-card-body">
         <p className="news-card-description">

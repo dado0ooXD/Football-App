@@ -39,7 +39,7 @@ const Results = () => {
     // };
   }, [id, fromDate, toDate]);
 
-  const uefa = results[0]?.league_name.split(" ")[0] === "UEFA";
+  // const uefa = results[0]?.league_name.split(" ")[0] === "UEFA";
 
   return (
     <Layout>
@@ -63,15 +63,15 @@ const Results = () => {
               onClick={() => navigate(`/standings/${id}`)}
             >
               <img
-                src={
-                  results[0]?.country_logo
-                    ? results[0].country_logo
-                    : uefa
-                    ? "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/2560px-Flag_of_Europe.svg.png"
-                    : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEURERGD9/d/AAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII="
-                }
-                alt="results_info_logo"
-                className="results-info-logo"
+              // src={
+              //   results[0]?.country_logo
+              //     ? results[0].country_logo
+              //     : uefa
+              //     ? "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/2560px-Flag_of_Europe.svg.png"
+              //     : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAASwAAACoCAMAAABt9SM9AAAAA1BMVEURERGD9/d/AAAAR0lEQVR4nO3BAQEAAACCIP+vbkhAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO8GxYgAAb0jQ/cAAAAASUVORK5CYII="
+              // }
+              // alt="results_info_logo"
+              // className="results-info-logo"
               />
 
               <h3>

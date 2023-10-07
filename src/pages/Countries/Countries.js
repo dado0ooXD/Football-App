@@ -34,9 +34,8 @@ const Countries = () => {
       ) : (
         <div
           style={{
+            padding: "10px",
             width: "100%",
-            height: "100vh",
-            overflowY: "scroll",
             borderRadius: "20px",
           }}
         >
@@ -49,7 +48,7 @@ const Countries = () => {
           </div>
           <div className="countries-main">
             {countries
-              .filter((item, index) =>
+              ?.filter((item, index) =>
                 item.country_name.toLowerCase().includes(search.toLowerCase())
               )
               .map((item, index) => (
