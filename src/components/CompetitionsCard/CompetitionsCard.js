@@ -37,7 +37,7 @@ const CompetitionsCard = ({
             className="competitions-button"
             style={{ marginLeft: "10px" }}
           >
-            Standing
+            Standings
           </button>
         )}
 

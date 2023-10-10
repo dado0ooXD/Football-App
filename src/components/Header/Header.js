@@ -12,7 +12,7 @@ const Header = () => {
             alt="app-logo"
             className="app-logo"
           /> */}
-          <h2 style={{ color: "white" }}>LiveScore</h2>
+          <h2 style={{ color: "white" }}>Football App</h2>
         </div>
         <nav>
           <input className="hidden" type="checkbox" id="menuToggle" />
@@ -34,7 +34,7 @@ const Header = () => {
                   to="/teams"
                   style={{ textDecoration: "none", color: "white" }}
                 >
-                  Teams
+                  Favourites
                 </Link>
               </li>
               <li className="nav-tab">

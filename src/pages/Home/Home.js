@@ -8,7 +8,6 @@ import ResultCard from "../../components/ResultCard/ResultCard";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 import { fullDate } from "../../utils/dates";
 import NewsCard from "../../components/NewsCard/NewsCard";
-import { Tweet } from "react-tweet";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -21,6 +20,7 @@ const Home = () => {
   useEffect(() => {
     dispatch(getAllNews());
     dispatch(getLIveResults());
+
     // setInterval(() => {
     //   dispatch(getLIveResults());
     // }, 60000);
@@ -90,7 +90,7 @@ const Home = () => {
                 </span>
               </div>
               {live?.map((item, index) => (
-                <ResultCard key={index} {...item} />
+                <ResultCard key={index} item={item} />
               ))}
             </div>
           </div>

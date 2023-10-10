@@ -1,5 +1,6 @@
 .match-stats {
   background-color: #181818;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -14,7 +15,7 @@
 }
 
 .match-stats-head {
-  background-color: pink;
+  background-color: #111;
   flex: 2;
 }
 
@@ -25,11 +26,14 @@
 }
 
 .head-info {
+  padding: 10px 0;
   height: 40px;
   width: 100%;
-  background-color: gray;
+  background-color: #181818;
   display: flex;
   align-items: center;
+  color: white;
+  justify-content: space-between;
 }
 
 .country_logo_one {
@@ -44,10 +48,12 @@
 }
 
 .head-result {
-  height: 88%;
+  padding: 20px 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  background-color: #111;
+  color: white;
 }
 
 .score-number {
@@ -66,25 +72,23 @@
   margin-top: 30px;
 }
 
-.match-stats-footer {
-  flex: 0.5;
-  background-color: lightgray;
-}
-
 .home-team-info {
-  flex: 1;
-  background-color: gray;
+  /* flex: 1; */
+  background-color: #181818;
 }
 
 .away-team-info {
   flex: 1;
-  background-color: pink;
+  background-color: #111;
 }
 
 .home-team-info-head {
   height: 40px;
   width: 100%;
-  background-color: chocolate;
+  background-color: #181818;
+  color: white;
+  font-weight: bold;
+
   display: flex;
   align-items: center;
   /* padding-left: 10px; */
@@ -93,10 +97,11 @@
 .away-team-info-head {
   height: 40px;
   width: 100%;
-  background-color: chocolate;
+  background-color: #181818;
   display: flex;
   align-items: center;
-  /* padding-left: 10px; */
+
+  color: white;
 }
 
 .stands {
@@ -108,13 +113,13 @@
 .home-stands {
   flex: 1;
   height: 100%;
-  background-color: lightblue;
+  background-color: #111;
 }
 
 .away-stands {
   flex: 1;
   height: 100%;
-  background-color: lightgreen;
+  background-color: #111;
   text-align: right;
 }
 
@@ -129,10 +134,38 @@
 .feedback-home {
   display: flex;
   align-items: center;
+  background-color: #111;
+  color: white;
+  padding-left: 10px;
 }
 
 .feedback-away {
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  background-color: #111;
+  color: white;
+  padding-right: 10px;
+}
+
+.match-stats-footer {
+  display: flex;
+  justify-content: space-between;
+  height: 50px;
+  background-color: #181818;
+  padding: 5px;
+}
+
+.match-stats-footer-item {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5px;
+  color: gray;
+}
+
+.match-stats-footer-item2 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  color: gray;
 }

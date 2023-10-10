@@ -12,6 +12,8 @@
 .result-card-second {
   display: flex;
   margin-left: 10px;
+  width: 100%;
+  cursor: pointer;
 }
 
 .result-date-time {
@@ -31,7 +33,11 @@
 }
 
 .result-card-foot {
-  margin-right: 40px;
+  margin-right: 10px;
+  display: flex;
+  width: 70px;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .match-name {
