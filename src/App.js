@@ -1,6 +1,6 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Teams from "./pages/Teams/Teams";
+import Favourites from "./pages/Favourites/Favourites";
 import Home from "./pages/Home/Home";
 import Countries from "./pages/Countries/Countries";
 import Competitions from "./pages/Competitions/Competitions";
@@ -77,7 +77,7 @@ function App() {
         <Route path="/topscorers/:id" element={<TopScorers />} />
         <Route path="/matchstats/:id" element={<AllStats />} />
         <Route path="/results/:id" element={<Results />} />
-        <Route path="/teams" element={<Teams />} />
+        <Route path="/teams" element={<Favourites />} />
         <Route path="/countries" element={<Countries />} />
         <Route path="/competitions/:id" element={<Competitions />} />
         <Route path="/standings/:id" element={<Standings />} />

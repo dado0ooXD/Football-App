@@ -3,7 +3,7 @@ import "./ResultCard.css";
 // import { useNavigate } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addToFavourites } from "../../store/newsSlice";
 
 const ResultCard = ({ item }) =>
@@ -36,6 +36,7 @@ const ResultCard = ({ item }) =>
 
     // Favourites
     const dispatch = useDispatch();
+    const favourites = useSelector((state) => state.news.favourites);
 
     return (
       <div className="result-card-main">
@@ -106,12 +107,16 @@ const ResultCard = ({ item }) =>
             <h4 className="match-score">{item?.match_awayteam_score}</h4>
           </div>
           <div>
-            {/* <StarIcon /> */}
+            {/* {favourites.includes(item.match_id) ? (
+              <StarIcon color="white" />
+            ) : ( */}
             <StarOutlineIcon
+              color="white"
               onClick={() => {
                 dispatch(addToFavourites(item));
               }}
             />
+            {/* )} */}
           </div>
         </div>
       </div>

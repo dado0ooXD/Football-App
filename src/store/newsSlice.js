@@ -14,18 +14,34 @@ export const getAllNews = createAsyncThunk("home/getAllNews", async () => {
   }
 });
 
+const favourites = JSON.parse(localStorage.getItem("favourites"));
+
 const newsSlice = createSlice({
   name: "news",
   initialState: {
     news: [],
-    favourites: [],
+    favourites: favourites,
     loading: false,
     error: false,
   },
   reducers: {
     addToFavourites: (state, action) => {
-      state.favourites.push(action.payload);
-      return state;
+      const favoriteMatch = action.payload;
+      const duplicate = state.favourites.find(
+        (item) => item.match_id === favoriteMatch.match_id
+      );
+      if (!duplicate) {
+        state.favourites.push(favoriteMatch);
+        localStorage.setItem("favourites", JSON.stringify(state.favourites));
+        return state;
+      }
+
+      // const duplicate = state.favourites.find(
+      //   (item) => item.match_id === favoriteMatch.match_id
+      // );
+      // if (!duplicate) {
+
+      // }
     },
   },
 
