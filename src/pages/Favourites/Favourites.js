@@ -1,9 +1,11 @@
 import Layout from "../../Layout/Layout";
+import FavouriteCard from "../../components/FavouriteCard/FavouriteCard";
 import ResultCard from "../../components/ResultCard/ResultCard";
 import "./Favourites.css";
 
 const Favourites = () => {
   const favourites = JSON.parse(localStorage.getItem("favourites"));
+
   console.log("Favoriti => ", favourites);
 
   return (
@@ -13,8 +15,8 @@ const Favourites = () => {
           <span>Favourites</span>
         </div>
         <div className="favourites-main">
-          {favourites.map((item, index) => (
-            <ResultCard key={index} item={item} />
+          {favourites?.map((item, index) => (
+            <FavouriteCard key={index} item={item} />
           ))}
         </div>
       </div>

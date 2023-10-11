@@ -1,7 +1,6 @@
 import React from "react";
 import "./ResultCard.css";
 // import { useNavigate } from "react-router-dom";
-import StarIcon from "@mui/icons-material/Star";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import { useDispatch, useSelector } from "react-redux";
 import { addToFavourites } from "../../store/newsSlice";
@@ -37,7 +36,7 @@ const ResultCard = ({ item }) =>
     // Favourites
     const dispatch = useDispatch();
     const favourites = useSelector((state) => state.news.favourites);
-
+    console.log(favourites);
     return (
       <div className="result-card-main">
         <div className="result-card-second" onClick={openPopUp}>
@@ -111,11 +110,12 @@ const ResultCard = ({ item }) =>
               <StarIcon color="white" />
             ) : ( */}
             <StarOutlineIcon
-              color="white"
+              style={{ color: "white", cursor: "pointer" }}
               onClick={() => {
                 dispatch(addToFavourites(item));
               }}
             />
+
             {/* )} */}
           </div>
         </div>

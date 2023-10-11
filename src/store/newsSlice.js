@@ -14,7 +14,7 @@ export const getAllNews = createAsyncThunk("home/getAllNews", async () => {
   }
 });
 
-const favourites = JSON.parse(localStorage.getItem("favourites"));
+const favourites = JSON.parse(localStorage.getItem("favourites")) || [];
 
 const newsSlice = createSlice({
   name: "news",
@@ -26,22 +26,22 @@ const newsSlice = createSlice({
   },
   reducers: {
     addToFavourites: (state, action) => {
-      const favoriteMatch = action.payload;
+      const favouriteMatch = action.payload;
       const duplicate = state.favourites.find(
-        (item) => item.match_id === favoriteMatch.match_id
+        (item) => item.match_id === favouriteMatch.match_id
       );
       if (!duplicate) {
-        state.favourites.push(favoriteMatch);
+        state.favourites.push(favouriteMatch);
         localStorage.setItem("favourites", JSON.stringify(state.favourites));
         return state;
       }
-
-      // const duplicate = state.favourites.find(
-      //   (item) => item.match_id === favoriteMatch.match_id
-      // );
-      // if (!duplicate) {
-
-      // }
+    },
+    removeFromFavourites: (state, action) => {
+      const targetMatch = action.payload;
+      state.favourites = state.favourites.filter(
+        (item) => item.match_id !== targetMatch.match_id
+      );
+      localStorage.setItem("favourites", JSON.stringify(state.favourites));
     },
   },
 
@@ -62,4 +62,4 @@ const newsSlice = createSlice({
 });
 
 export default newsSlice.reducer;
-export const { addToFavourites } = newsSlice.actions;
+export const { addToFavourites, removeFromFavourites } = newsSlice.actions;
