@@ -8,6 +8,8 @@ import ResultCard from "../../components/ResultCard/ResultCard";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 import { nextSevenDays, prevSevenDays } from "../../utils/dates";
 import { fullDate } from "../../utils/dates";
+import { closeSnackbar } from "../../store/newsSlice";
+import { Snackbar } from "@mui/material";
 
 const Results = () => {
   const { id } = useParams();
@@ -15,6 +17,7 @@ const Results = () => {
   const navigate = useNavigate();
   const results = useSelector((state) => state.results.results);
   const loading = useSelector((state) => state.results.loading);
+  const isOpen = useSelector((state) => state.news.openSnack);
 
   // From To
   const [fromDate, setFromDate] = useState(prevSevenDays);
@@ -30,6 +33,20 @@ const Results = () => {
   const prevResults = () => {
     setFromDate(prevSevenDays);
     setToDate(fullDate);
+  };
+
+  // Close snackbar
+  const closeSnack = () => {
+    dispatch(closeSnackbar());
+  };
+
+  // Snackbars styles
+  const snackbarStyles = {
+    snackbar: {
+      width: "90%",
+      backgroundColor: "#3B7A57",
+      color: "white",
+    },
   };
 
   useEffect(() => {
@@ -106,7 +123,22 @@ const Results = () => {
             </div>
           </div>
           {results.length > 0 ? (
-            results.map((item, index) => <ResultCard key={index} item={item} />)
+            <>
+              {results.map((item, index) => (
+                <ResultCard key={index} item={item} />
+              ))}{" "}
+              <Snackbar
+                anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                color="success"
+                open={isOpen}
+                message="Match added to favourites!"
+                autoHideDuration={2000}
+                onClose={closeSnack}
+                ContentProps={{
+                  style: snackbarStyles.snackbar,
+                }}
+              />
+            </>
           ) : (
             <div
               style={{

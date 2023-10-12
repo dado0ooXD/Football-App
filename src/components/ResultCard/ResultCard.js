@@ -3,7 +3,7 @@ import "./ResultCard.css";
 // import { useNavigate } from "react-router-dom";
 import StarOutlineIcon from "@mui/icons-material/StarOutline";
 import { useDispatch, useSelector } from "react-redux";
-import { addToFavourites } from "../../store/newsSlice";
+import { addToFavourites, openSnackbar } from "../../store/newsSlice";
 
 const ResultCard = ({ item }) =>
   //   {
@@ -113,6 +113,7 @@ const ResultCard = ({ item }) =>
               style={{ color: "white", cursor: "pointer" }}
               onClick={() => {
                 dispatch(addToFavourites(item));
+                dispatch(openSnackbar());
               }}
             />
 

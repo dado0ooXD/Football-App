@@ -20,6 +20,8 @@ const newsSlice = createSlice({
   name: "news",
   initialState: {
     news: [],
+    openSnack: false,
+
     favourites: favourites,
     loading: false,
     error: false,
@@ -43,6 +45,12 @@ const newsSlice = createSlice({
       );
       localStorage.setItem("favourites", JSON.stringify(state.favourites));
     },
+    openSnackbar: (state, action) => {
+      state.openSnack = true;
+    },
+    closeSnackbar: (state, action) => {
+      state.openSnack = false;
+    },
   },
 
   extraReducers: (builder) => {
@@ -62,4 +70,9 @@ const newsSlice = createSlice({
 });
 
 export default newsSlice.reducer;
-export const { addToFavourites, removeFromFavourites } = newsSlice.actions;
+export const {
+  addToFavourites,
+  removeFromFavourites,
+  openSnackbar,
+  closeSnackbar,
+} = newsSlice.actions;

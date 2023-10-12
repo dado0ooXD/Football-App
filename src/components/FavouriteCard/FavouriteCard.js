@@ -1,7 +1,11 @@
 import React from "react";
 import StarIcon from "@mui/icons-material/Star";
 import { useDispatch, useSelector } from "react-redux";
-import { removeFromFavourites } from "../../store/newsSlice";
+import {
+  closeSnackbar,
+  openSnackbar,
+  removeFromFavourites,
+} from "../../store/newsSlice";
 
 const FavouriteCard = ({ item }) => {
   const openPopUp = () => {
@@ -89,6 +93,7 @@ const FavouriteCard = ({ item }) => {
             style={{ color: "white", cursor: "pointer" }}
             onClick={() => {
               dispatch(removeFromFavourites(item));
+              dispatch(openSnackbar());
             }}
           />
 

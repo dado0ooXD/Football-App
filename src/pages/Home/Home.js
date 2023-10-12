@@ -2,12 +2,13 @@ import React, { useEffect } from "react";
 import "./Home.css";
 import Header from "../../components/Header/Header";
 import { useDispatch, useSelector } from "react-redux";
-import { getAllNews } from "../../store/newsSlice";
+import { closeSnackbar, getAllNews } from "../../store/newsSlice";
 import { getLIveResults } from "../../store/resultsSlice";
 import ResultCard from "../../components/ResultCard/ResultCard";
 import { LoadingSpinner } from "../../components/LoadingSpinner/LoadingSpinner";
 import { fullDate } from "../../utils/dates";
 import NewsCard from "../../components/NewsCard/NewsCard";
+import { Snackbar } from "@mui/material";
 
 const Home = () => {
   const dispatch = useDispatch();
@@ -16,6 +17,7 @@ const Home = () => {
   const newsLoading = useSelector((state) => state.news.loading);
   const news = useSelector((state) => state.news.news);
   const newsContainer = [news[0], news[1], news[2]];
+  const isOpen = useSelector((state) => state.news.openSnack);
 
   useEffect(() => {
     dispatch(getAllNews());
@@ -29,6 +31,21 @@ const Home = () => {
     //   clearInterval();
     // };
   }, []);
+
+  // Close snackbar
+  const closeSnack = () => {
+    dispatch(closeSnackbar());
+  };
+
+  // Snackbars styles
+  const snackbarStyles = {
+    snackbar: {
+      maxWidth: "200px",
+      backgroundColor: "#3B7A57",
+      color: "white",
+    },
+  };
+
   return (
     <>
       <Header />
@@ -92,6 +109,18 @@ const Home = () => {
               {live?.map((item, index) => (
                 <ResultCard key={index} item={item} />
               ))}
+
+              <Snackbar
+                color="success"
+                anchorOrigin={{ vertical: "top", horizontal: "right" }}
+                open={isOpen}
+                message="Match added to favourites!"
+                autoHideDuration={2000}
+                onClose={closeSnack}
+                ContentProps={{
+                  style: snackbarStyles.snackbar, // Stilizacija
+                }}
+              />
             </div>
           </div>
         )}
