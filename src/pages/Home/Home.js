@@ -16,13 +16,12 @@ const Home = () => {
   const loading = useSelector((state) => state.results.loading);
   const newsLoading = useSelector((state) => state.news.loading);
   const news = useSelector((state) => state.news.news);
-  const newsContainer = [news[0], news[1], news[2]];
   const isOpen = useSelector((state) => state.news.openSnack);
 
   useEffect(() => {
     dispatch(getAllNews());
     dispatch(getLIveResults());
-
+    console.log("News ===>", news);
     // setInterval(() => {
     //   dispatch(getLIveResults());
     // }, 60000);
@@ -88,7 +87,7 @@ const Home = () => {
                   >
                     News
                   </span>
-                  {newsContainer.map((item, index) => (
+                  {news?.map((item, index) => (
                     <NewsCard key={index} {...item} />
                   ))}
                 </>

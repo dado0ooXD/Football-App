@@ -5,16 +5,16 @@ const NewsCard = ({
   author,
   content,
   description,
-  publishedAt,
+  pubDate,
   title,
-  url,
-  urlToImage,
+  link,
+  image_url,
 }) => {
   return (
     <div className="news-card">
       <div className="news-card-head">
-        <a href={url} target="_blank" rel="noreferrer">
-          <img className="news-card-img" src={urlToImage} alt="news-img" />
+        <a href={link} target="_blank" rel="noreferrer">
+          <img className="news-card-img" src={image_url} alt="news-img" />
         </a>{" "}
         <h4 style={{ width: "200px" }}>{title?.slice(0, 70)}</h4>
       </div>
@@ -23,9 +23,7 @@ const NewsCard = ({
           {description?.slice(0, 90)}
           {content?.slice(0, 50)}
         </p>
-        <span className="news-card-publishedAt">
-          {publishedAt?.slice(0, 10)}
-        </span>
+        <span className="news-card-publishedAt">{pubDate?.slice(0, 10)}</span>
       </div>
     </div>
   );

@@ -5,10 +5,10 @@ import axios from "axios";
 export const getAllNews = createAsyncThunk("home/getAllNews", async () => {
   try {
     const response = await axios.get(
-      `https://newsapi.org/v2/everything?q=soccer&from=2023-10-06&sortBy=publishedAt&apiKey=${process.env.REACT_APP_NEWS_KEY}`
+      `https://newsdata.io/api/1/news?apikey=${process.env.REACT_APP_NEWS_KEY}&q=soccer`
     );
-    const data = await response.data;
-    return data.articles.slice(0, 10);
+    const data = await response.data.results;
+    return data.slice(0, 3);
   } catch (error) {
     console.log(error);
   }
