@@ -43,7 +43,7 @@ const Favourites = () => {
               anchorOrigin={{ vertical: "top", horizontal: "right" }}
               open={isOpen}
               message="Match removed from favourites!"
-              autoHideDuration={2000}
+              autoHideDuration={600}
               onClose={closeSnack}
               ContentProps={{
                 style: snackbarStyles.snackbar, // Stilizacija

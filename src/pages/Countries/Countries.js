@@ -48,10 +48,10 @@ const Countries = () => {
           </div>
           <div className="countries-main">
             {countries
-              ?.filter((item, index) =>
+              ?.filter((item) =>
                 item.country_name.toLowerCase().includes(search.toLowerCase())
               )
-              .map((item, index) => (
+              ?.map((item, index) => (
                 <CountriesCard key={index} {...item} />
               ))}
           </div>
