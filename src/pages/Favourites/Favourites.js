@@ -29,7 +29,7 @@ const Favourites = () => {
   return (
     <Layout>
       <div className="favourites-container">
-        {favourites.length > 0 ? (
+        {favourites?.length > 0 ? (
           <>
             <div className="favourites-info">
               <span>Favourites</span>

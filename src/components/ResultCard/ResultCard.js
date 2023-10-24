@@ -26,7 +26,7 @@ const ResultCard = ({ item }) =>
   // }
   {
     const openPopUp = () => {
-      const url = `http://localhost:3000/matchstats/${item.match_id}`;
+      const url = `matchstats/${item.match_id}`;
       const windowName = "Popup";
       const windowFeatures = "width=650,height=850";
 
